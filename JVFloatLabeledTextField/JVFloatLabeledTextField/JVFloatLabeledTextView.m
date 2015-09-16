@@ -181,7 +181,7 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
     CGRect textRect = [self textRect];
     
     _placeholderLabel.alpha = [self.text length] > 0 ? 0.0f : 1.0f;
-    _placeholderLabel.frame = CGRectMake(textRect.origin.x, textRect.origin.y,
+    _placeholderLabel.frame = CGRectMake(textRect.origin.x + _floatingLabelXPadding, textRect.origin.y,
                                          placeholderLabelSize.width, placeholderLabelSize.height);
     
     [self setLabelOriginForTextAlignment];
@@ -237,6 +237,14 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
 
 - (void)hideFloatingLabel:(BOOL)animated
 {
+
+	CGSize floatingLabelSize = [_floatingLabel sizeThatFits:_floatingLabel.superview.bounds.size];
+	
+	_floatingLabel.frame = CGRectMake(_floatingLabel.frame.origin.x + _placeholderXPadding,
+                                      _floatingLabel.frame.origin.y,
+                                      floatingLabelSize.width,
+                                      floatingLabelSize.height);
+	
     void (^hideBlock)() = ^{
         _floatingLabel.alpha = 0.0f;
         _floatingLabel.frame = CGRectMake(_floatingLabel.frame.origin.x,
@@ -293,7 +301,7 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
     _floatingLabel.frame = CGRectMake(floatingLabelOriginX + _floatingLabelXPadding, _floatingLabel.frame.origin.y,
                                       _floatingLabel.frame.size.width, _floatingLabel.frame.size.height);
     
-    _placeholderLabel.frame = CGRectMake(placeholderLabelOriginX, _placeholderLabel.frame.origin.y,
+    _placeholderLabel.frame = CGRectMake(placeholderLabelOriginX + _floatingLabelXPadding, _placeholderLabel.frame.origin.y,
                                          _placeholderLabel.frame.size.width, _placeholderLabel.frame.size.height);
 }
 
