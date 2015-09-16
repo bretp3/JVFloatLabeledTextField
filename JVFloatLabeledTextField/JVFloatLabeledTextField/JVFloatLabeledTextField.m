@@ -130,14 +130,6 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
 
 - (void)showFloatingLabel:(BOOL)animated
 {
-
-	CGSize floatingLabelSize = [_floatingLabel sizeThatFits:_floatingLabel.superview.bounds.size];
-	
-	_floatingLabel.frame = CGRectMake(_floatingLabel.frame.origin.x + _placeholderXPadding,
-                                      _floatingLabel.frame.origin.y,
-                                      floatingLabelSize.width,
-                                      floatingLabelSize.height);
-									  
     void (^showBlock)() = ^{
         _floatingLabel.alpha = 1.0f;
         _floatingLabel.frame = CGRectMake(_floatingLabel.frame.origin.x,
@@ -160,6 +152,14 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
 
 - (void)hideFloatingLabel:(BOOL)animated
 {
+
+	CGSize floatingLabelSize = [_floatingLabel sizeThatFits:_floatingLabel.superview.bounds.size];
+	
+	_floatingLabel.frame = CGRectMake(_floatingLabel.frame.origin.x + _placeholderXPadding,
+                                      _floatingLabel.frame.origin.y,
+                                      floatingLabelSize.width,
+                                      floatingLabelSize.height);
+									  
     void (^hideBlock)() = ^{
         _floatingLabel.alpha = 0.0f;
         _floatingLabel.frame = CGRectMake(_floatingLabel.frame.origin.x,
