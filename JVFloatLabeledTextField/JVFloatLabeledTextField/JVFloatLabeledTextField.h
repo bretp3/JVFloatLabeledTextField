@@ -67,6 +67,12 @@ IB_DESIGNABLE
 @property (nonatomic) IBInspectable CGFloat placeholderYPadding;
 
 /**
+ * Padding to be applied to the X coordinate of the placeholder.
+ * Defaults to zero.
+ */
+@property (nonatomic) IBInspectable CGFloat placeholderXPadding;
+
+/**
  * Font to be applied to the floating label. 
  * Defaults to the first applicable of the following:
  * - the custom specified attributed placeholder font at 70% of its size
