@@ -33,7 +33,7 @@
  * Due to space constraints on mobile devices, it is common to rely solely on placeholders as a means to label fields.
  * This presents a UX problem, in that, once the user begins to fill out a form, no labels are present.
  *
- * `JVFloatLabeledTextField` aims to improve the user experience by having placeholders transition into 
+ * `JVFloatLabeledTextField` aims to improve the user experience by having placeholders transition into
  * "floating labels" that hover above the text field after it is populated with text.
  *
  * JVFloatLabeledTextField supports iOS 6+.
@@ -74,7 +74,7 @@ IB_DESIGNABLE
 @property (nonatomic) IBInspectable CGFloat placeholderXPadding;
 
 /**
- * Font to be applied to the floating label. 
+ * Font to be applied to the floating label.
  * Defaults to the first applicable of the following:
  * - the custom specified attributed placeholder font at 70% of its size
  * - the custom specified textField font at 70% of its size
@@ -82,7 +82,7 @@ IB_DESIGNABLE
 @property (nonatomic, strong) UIFont * floatingLabelFont;
 
 /**
- * Text color to be applied to the floating label. 
+ * Text color to be applied to the floating label.
  * Defaults to `[UIColor grayColor]`.
  */
 @property (nonatomic, strong) IBInspectable UIColor * floatingLabelTextColor;
@@ -103,13 +103,13 @@ IB_DESIGNABLE
 @property (nonatomic, assign) IBInspectable BOOL animateEvenIfNotFirstResponder;
 
 /**
- * Duration of the animation when showing the floating label. 
+ * Duration of the animation when showing the floating label.
  * Defaults to 0.3 seconds.
  */
 @property (nonatomic, assign) NSTimeInterval floatingLabelShowAnimationDuration;
 
 /**
- * Duration of the animation when hiding the floating label. 
+ * Duration of the animation when hiding the floating label.
  * Defaults to 0.3 seconds.
  */
 @property (nonatomic, assign) NSTimeInterval floatingLabelHideAnimationDuration;

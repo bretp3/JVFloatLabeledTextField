@@ -56,7 +56,7 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
 
 - (void)commonInit
 {
-
+    
     _floatingLabel = [UILabel new];
     _floatingLabel.alpha = 0.0f;
     _floatingLabelFont = [self defaultFloatingLabelFont];
@@ -76,7 +76,7 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
     
     [self addSubview:_floatingLabel];
     [self addSubview:_errorLabel];
-
+    
     _adjustsClearButtonRect = YES;
     _isFloatingLabelFontDefault = YES;
 }
@@ -160,21 +160,21 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
 
 - (void)hideFloatingLabel:(BOOL)animated
 {
-
-	CGSize floatingLabelSize = [_floatingLabel sizeThatFits:_floatingLabel.superview.bounds.size];
-	
-	_floatingLabel.frame = CGRectMake(_floatingLabel.frame.origin.x + _placeholderXPadding,
+    
+    CGSize floatingLabelSize = [_floatingLabel sizeThatFits:_floatingLabel.superview.bounds.size];
+    
+    _floatingLabel.frame = CGRectMake(_floatingLabel.frame.origin.x,
                                       _floatingLabel.frame.origin.y,
                                       floatingLabelSize.width,
                                       floatingLabelSize.height);
-									  
+    
     void (^hideBlock)() = ^{
         _floatingLabel.alpha = 0.0f;
         _floatingLabel.frame = CGRectMake(_floatingLabel.frame.origin.x,
                                           _floatingLabel.font.lineHeight + _placeholderYPadding,
                                           _floatingLabel.frame.size.width,
                                           _floatingLabel.frame.size.height);
-
+        
     };
     
     if (animated || 0 != _animateEvenIfNotFirstResponder) {
@@ -213,9 +213,9 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
     
     
     _errorLabel.frame = CGRectMake(originX + _floatingLabelXPadding, _floatingLabelYPadding,
-                                      _errorLabel.frame.size.width, _errorLabel.frame.size.height);
+                                   _errorLabel.frame.size.width, _errorLabel.frame.size.height);
     
-
+    
 }
 
 - (void)setFloatingLabelText:(NSString *)text
@@ -342,10 +342,10 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
                                       floatingLabelSize.height);
     
     _errorLabel.textColor = self.errorLabelTextColor;
-    _errorLabel.frame = CGRectMake(_errorLabel.frame.origin.x,
-                                      _errorLabel.frame.origin.y,
-                                      errorLabelSize.width,
-                                      errorLabelSize.height);
+    _errorLabel.frame = CGRectMake(_errorLabel.frame.origin.x + _floatingLabelXPadding,
+                                   _errorLabel.frame.origin.y,
+                                   errorLabelSize.width,
+                                   errorLabelSize.height);
     
     BOOL firstResponder = self.isFirstResponder;
     _floatingLabel.textColor = (firstResponder && self.text && self.text.length > 0 ?
