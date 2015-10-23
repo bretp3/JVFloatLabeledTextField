@@ -31,6 +31,7 @@
 		7F9020251809A39B00B43AD5 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F9020221809A39B00B43AD5 /* Default@2x.png */; };
 		7F9AB497183B2EBF00694AB0 /* JVFloatLabeledTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F9AB496183B2EBF00694AB0 /* JVFloatLabeledTextView.m */; };
 		7FF4DB94180B865F008527BD /* JVFloatLabeledTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF4DB93180B865F008527BD /* JVFloatLabeledTextField.m */; };
+		BAE554951BDAA7A7007331DE /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAE554941BDAA7A7007331DE /* Test.storyboard */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		7F9AB496183B2EBF00694AB0 /* JVFloatLabeledTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JVFloatLabeledTextView.m; sourceTree = "<group>"; };
 		7FF4DB92180B865F008527BD /* JVFloatLabeledTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JVFloatLabeledTextField.h; sourceTree = "<group>"; };
 		7FF4DB93180B865F008527BD /* JVFloatLabeledTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JVFloatLabeledTextField.m; sourceTree = "<group>"; };
+		BAE554941BDAA7A7007331DE /* Test.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Test.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +185,7 @@
 				7F50338D17FA7B8C0026FB7F /* JVFloatLabeledTextFieldViewController.m */,
 				7FF4DB91180B865F008527BD /* JVFloatLabeledTextField */,
 				7F50336017FA7B0A0026FB7F /* Supporting Files */,
+				BAE554941BDAA7A7007331DE /* Test.storyboard */,
 			);
 			path = JVFloatLabeledTextField;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 			files = (
 				7F9020251809A39B00B43AD5 /* Default@2x.png in Resources */,
 				7F9020231809A39B00B43AD5 /* Default-568h@2x.png in Resources */,
+				BAE554951BDAA7A7007331DE /* Test.storyboard in Resources */,
 				7F9020241809A39B00B43AD5 /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

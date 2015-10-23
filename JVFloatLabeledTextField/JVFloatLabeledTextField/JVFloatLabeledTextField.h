@@ -47,6 +47,7 @@ IB_DESIGNABLE
  * Read-only access to the floating label.
  */
 @property (nonatomic, strong, readonly) UILabel * floatingLabel;
+@property (nonatomic, strong, readonly) UILabel * errorLabel;
 
 /**
  * Padding to be applied to the y coordinate of the floating label upon presentation.
@@ -92,6 +93,9 @@ IB_DESIGNABLE
  */
 @property (nonatomic, strong) IBInspectable UIColor * floatingLabelActiveTextColor;
 
+
+@property (nonatomic, strong) IBInspectable UIColor * errorLabelTextColor;
+
 /**
  * Indicates whether the floating label's appearance should be animated regardless of first responder status.
  * By default, animation only occurs if the text field is a first responder.
@@ -129,5 +133,7 @@ IB_DESIGNABLE
  *  @param floatingTitle The string to be shown above the text field once it has been populated with text by the user.
  */
 - (void)setPlaceholder:(NSString *)placeholder floatingTitle:(NSString *)floatingTitle;
+
+- (void)setError:(NSString *)text;
 
 @end
