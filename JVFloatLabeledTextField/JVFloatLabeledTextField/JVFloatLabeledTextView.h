@@ -43,6 +43,7 @@
 IB_DESIGNABLE
 @interface JVFloatLabeledTextView : UITextView
 
+@property (nonatomic, strong, readonly) UIView * coverView;
 /**
  * The placeholder string to be shown in the text view when no other text is present.
  */
@@ -57,6 +58,7 @@ IB_DESIGNABLE
  * Read-only access to the floating label.
  */
 @property (nonatomic, strong, readonly) UILabel * floatingLabel;
+@property (nonatomic, strong, readonly) UILabel * errorLabel;
 
 /**
  * Padding to be applied to the y coordinate of the floating label upon presentation.
@@ -96,6 +98,7 @@ IB_DESIGNABLE
  * Tint color is used by default if an `floatingLabelActiveTextColor` is not provided.
  */
 @property (nonatomic, strong) IBInspectable UIColor * floatingLabelActiveTextColor;
+@property (nonatomic, strong) IBInspectable UIColor * errorLabelTextColor;
 
 /**
  * Indicates whether the floating label should lock to the top of the text view, or scroll away with text when the text 
@@ -136,5 +139,7 @@ IB_DESIGNABLE
  *  @param floatingTitle The string to be shown above the text view once it has been populated with text by the user.
  */
 - (void)setPlaceholder:(NSString *)placeholder floatingTitle:(NSString *)floatingTitle;
+
+- (void)setError:(NSString *)text;
 
 @end
